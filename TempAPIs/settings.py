@@ -115,12 +115,27 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+import os
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-import os
-STATIC_URL = 'static/'
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+STATIC_URL = '/static/'
+
+
+
+# STATIC_URL = 'static/'
 # STATIC_URL = os.path.join(BASE_DIR, 'static/')
+
+
+
+
+
 
 
 # Default primary key field type
