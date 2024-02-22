@@ -120,14 +120,14 @@ import os
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
-STATIC_URL = '/static/'
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
+STATIC_URL = 'static/'
 
-STATIC_ROOT = 'static/'
+STATIC_ROOT = BASE_DIR / "static"
 
 # STATIC_URL = 'static/'
 # STATIC_URL = os.path.join(BASE_DIR, 'static/')
