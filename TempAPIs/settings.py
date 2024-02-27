@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d%xqzho2u=(fkg0a#tx7gbrvi+h!t2m=nx0wc@*@$^&-+r@-22
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1' , 'tezo.jerryhaxor.me']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'import_export',
     'corsheaders',
     'rest_framework',
+    'django_filters',
     'tezoapis',
 ]
 
@@ -123,19 +124,17 @@ import os
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / "static"
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-# STATIC_URL = 'static/'
-# STATIC_URL = os.path.join(BASE_DIR, 'static/')
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR / 'media'
+
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 
 
